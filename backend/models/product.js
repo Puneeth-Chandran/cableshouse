@@ -15,6 +15,10 @@ const productSchema = new mongoose.Schema({
         type:String,
         require:[true,'Please enter the description']
     },
+    // brand:{
+    //     type:String,
+    //     require:[true, 'Please enter the brand name']
+    // },
     // about_brand:{
     //     type:String,
     //     require:[true,'Please enter the description']
@@ -35,17 +39,23 @@ const productSchema = new mongoose.Schema({
             },
         },
     ],
-    category:{
+    category: {
         type: String,
-        required:[true,'Please select category for this product'],
-        enum:{
-            values:['Cat6',
-                    'Cat7',
-                    'Cat8'
-            ],
-            message:'Please select correct category for this product'
+        required: [true, 'Please select category for this product'],
+        enum: {
+            values: ['Cat6', 'Cat7', 'Cat8'],
+            message: 'Please select correct category for this product'
         }
     },
+    // subcategory: {
+    //     type: String,
+    //     required: false,
+    //     enum: {
+    //         values: ['Subcat1', 'Subcat2', 'Subcat3'],
+    //         message: 'Please select a correct subcategory for this product'
+    //     }
+    // }
+
     stock:{
         type:Number,
         required:[true, 'Please enter the product stock']
